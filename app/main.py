@@ -19,8 +19,12 @@ async def criar_tarefa(titulo: str):
 
     return {"mensagem": "OK"}
 
+async def pagina_inicial():
+    return {"mensagem": "Funcionando!"}
+
 async def listar_tarefas():
     return TAREFAS
 
 API.add_api_route("/tarefas", listar_tarefas, methods=['GET'])
 API.add_api_route("/criar", criar_tarefa, methods=['POST'])
+API.add_api_route("/", pagina_inicial, methods=['GET'])

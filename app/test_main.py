@@ -18,3 +18,9 @@ def testar_endpoint_criar_tarefa():
 
     assert len(requisicao.json()) == 1
     assert requisicao.json()[0]['id'] == 0
+
+def testar_pagina_inicial():
+    requisicao = CLIENT.get("/")
+
+    assert requisicao.status_code == 200
+    assert requisicao.json() == {"mensagem": "Funcionando!"}
