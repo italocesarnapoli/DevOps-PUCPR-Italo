@@ -14,7 +14,7 @@ def testar_endpoint_criar_tarefa():
 
     assert requisicao.json() == {"mensagem": "OK"}
 
-    requisicao = CLIENT.get('tarefas')
+    requisicao = CLIENT.get('/tarefas')
 
     assert len(requisicao.json()) == 1
     assert requisicao.json()[0]['id'] == 0
@@ -24,3 +24,9 @@ def testar_pagina_inicial():
 
     assert requisicao.status_code == 200
     assert requisicao.json() == {"mensagem": "Funcionando!"}
+
+def testar_nome_completo():
+    requisicao = CLIENT.get("/autor")
+
+    assert requisicao.status_code == 200
+    assert requisicao.json() == {"mensagem": "Italo Cesar Napoli"}
