@@ -3,7 +3,7 @@ name: Integracao
 on:
   push:
     branches: [desenvolvimento]
-  pull_request:
+  pull_request: 
     branches: [desenvolvimento]
 
   workflow_dispatch:
